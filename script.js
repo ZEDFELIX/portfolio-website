@@ -1,80 +1,165 @@
-let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
-let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header nav a');
+// =========================
+// LOADER / PAGE TRANSITION
+// =========================
 
- window.onscroll = () => {
-    sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
+function createLoaderButton() {
+  let loader = document.querySelector(".transition");
 
-        if(top >= offset && top < offset + height){
-            navLinks.forEach(Links => {
-                Links.classList.remove('active');
-                document.querySelector('header nav a [href*=' + id + ']').classList.add('active')
-            }) 
-        }
-    })
- }
+  if (!loader) {
+    loader = document.createElement("div");
+    loader.className = "transition";
+    document.body.appendChild(loader);
+  }
 
-menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x')
-    navbar.classList.toggle('active')
+  return loader;
 }
-// Initialize EmailJS with your user ID
-emailjs.init("felixsimon877@gmail.com"); // Replace with your EmailJS User ID
 
-// Select the contact form (assuming your form has the id 'contact-form')
-document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent the form from reloading the page
+window.addEventListener("load", () => {
+  const loader = document.querySelector(".transition");
+  if (loader) loader.classList.remove("active");
+});
 
-    // Get the form field values
-    var fullName = document.getElementById("full_name").value;
-    var email = document.getElementById("email").value;
-    var subject = document.getElementById("subject").value;
-    var message = document.getElementById("message").value;
+function pageTransition(url) {
+  const loader = createLoaderButton();
 
-    // Basic validation
-    if (fullName === "" || email === "" || subject === "" || message === "") {
-        alert("Please fill out all the fields.");
-        return; // Stop if any field is empty
+  loader.classList.add("active");
+
+  setTimeout(() => {
+    window.location.href = url;
+  }, 450);
+}
+
+function goBack() {
+  const loader = createLoaderButton();
+
+  loader.classList.add("active");
+
+  setTimeout(() => history.back(), 300);
+}
+
+function goWork() {
+  pageTransition("work.html");
+}
+
+// =========================
+// SCROLL TO SECTION
+// =========================
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    // auto close menu on mobile
+    const nav = document.getElementById("nav");
+    if (nav) nav.classList.remove("active");
+  }
+}
+
+// =========================
+// MENU TOGGLE (FIXED)
+// =========================
+function toggleMenu() {
+  const nav = document.getElementById("nav");
+  if (nav) {
+    nav.classList.toggle("active");
+  }
+}
+
+// close menu when clicking links
+document.addEventListener("click", (e) => {
+  const nav = document.getElementById("nav");
+
+  if (e.target.closest("nav a") && nav) {
+    nav.classList.remove("active");
+  }
+
+  // close menu when clicking outside
+  if (nav && !e.target.closest("nav") && !e.target.closest(".menu-toggle")) {
+    nav.classList.remove("active");
+  }
+});
+
+// =========================
+// CONTACT FORM
+// =========================
+function sendMessage() {
+  const name = document.getElementById("name");
+  const email = document.getElementById("email");
+  const message = document.getElementById("message");
+  const response = document.getElementById("response");
+
+  if (!response) return;
+
+  if (name?.value && email?.value && message?.value) {
+    response.innerText = "Message sent successfully ✔";
+    response.style.color = "green";
+
+    name.value = "";
+    email.value = "";
+    message.value = "";
+  } else {
+    response.innerText = "Please fill all fields";
+    response.style.color = "red";
+  }
+}
+
+// =========================
+// MAGNETIC EFFECT (MOBILE SAFE)
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".magnetic");
+
+  const isTouch = window.matchMedia("(pointer: coarse)").matches;
+
+  items.forEach(el => {
+    if (isTouch) return; // disable on mobile for stability
+
+    el.addEventListener("mousemove", (e) => {
+      const rect = el.getBoundingClientRect();
+
+      const x = (e.clientX - rect.left - rect.width / 2) * 0.1;
+      const y = (e.clientY - rect.top - rect.height / 2) * 0.1;
+
+      el.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    el.addEventListener("mouseleave", () => {
+      el.style.transform = "translate(0,0)";
+    });
+  });
+});
+
+// =========================
+// WORK FILTER
+// =========================
+function filterWork(category) {
+  const items = document.querySelectorAll(".work-card");
+
+  items.forEach(item => {
+    const type = item.getAttribute("data-type");
+
+    if (!category || category === "all") {
+      item.style.display = "block";
+    } else {
+      item.style.display = type === category ? "block" : "none";
     }
+  });
+}
 
-    // Email format validation using regex
-    var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailPattern.test(email)) {
-        alert("Please enter a valid email address.");
-        return; // Stop if the email format is invalid
-    }
+// =========================
+// CASE STUDY OPEN
+// =========================
+function openCase(type) {
+  pageTransition("case.html?type=" + type);
+}
 
-    // Show loading message or spinner
-    document.getElementById("loading").style.display = "block"; // Optional: Show loading spinner
+// =========================
+// GLOBAL LINK HANDLER
+// =========================
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest("[data-link]");
+  if (!btn) return;
 
-    // Prepare the email data to be sent
-    var emailData = {
-        from_name: fullName,
-        from_email: email,
-        subject: subject,
-        message: message
-    };
-
-    // Send the email using EmailJS
-    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", emailData) // Replace with your EmailJS Service and Template ID
-        .then(function(response) {
-            // Hide the loading message
-            document.getElementById("loading").style.display = "none";
-
-            // Show a success message or alert
-            alert("Message sent successfully!");
-            console.log("Success:", response);
-        }, function(error) {
-            // Hide the loading message
-            document.getElementById("loading").style.display = "none";
-
-            // Show an error message
-            alert("Oops! Something went wrong. Please try again.");
-            console.log("Error:", error);
-        });
+  const url = btn.getAttribute("data-link");
+  if (url) pageTransition(url);
 });
