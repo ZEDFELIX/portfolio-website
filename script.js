@@ -163,3 +163,15 @@ document.addEventListener("click", (e) => {
   const url = btn.getAttribute("data-link");
   if (url) pageTransition(url);
 });
+// =========================
+// KEYBOARD ACCESS
+// =========================
+document.addEventListener("keydown", (e) => {
+  if (e.key !== "Enter" && e.key !== " ") return;
+
+  const target = e.target.closest(".menu-toggle, .card, .work-card");
+  if (!target) return;
+
+  e.preventDefault();
+  target.click();
+});

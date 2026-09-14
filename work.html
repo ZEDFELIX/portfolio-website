@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Work — Zed | Graphic Designer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Selected design projects by Zed — brand identity, UI/UX, and social media design.">
+  <meta property="og:title" content="My Work — Zed | Graphic Designer">
+  <meta property="og:description" content="Selected design projects by Zed — brand identity, UI/UX, and social media design.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="My Work — Zed | Graphic Designer">
+  <meta name="twitter:description" content="Selected design projects by Zed — brand identity, UI/UX, and social media design.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23080808'/%3E%3Ctext x='32' y='44' font-family='Arial' font-size='40' font-weight='700' fill='%2315ff00' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="transition"></div>
+
+<header>
+  <h2>zed<span>.</span></h2>
+
+  <button class="back-btn magnetic" onclick="goBack()">← Back</button>
+
+  <nav id="nav" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<main id="main-content">
+  <section class="work">
+
+    <h1 class="title">My Work</h1>
+    <p class="subtitle">Selected design projects</p>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterWork('all', event)">All</button>
+      <button class="filter-btn" onclick="filterWork('brand', event)">Branding</button>
+      <button class="filter-btn" onclick="filterWork('ui', event)">UI Design</button>
+      <button class="filter-btn" onclick="filterWork('social', event)">Social Media</button>
+    </div>
+
+    <div class="work-grid">
+
+      <div class="work-card magnetic" data-type="brand" role="button" tabindex="0" onclick="openCase('brand')">
+        <img src="brand identity (2).jpeg" alt="Brand identity project">
+        <div class="work-info"><h3>Brand Identity</h3></div>
+      </div>
+
+      <div class="work-card magnetic" data-type="ui" role="button" tabindex="0" onclick="openCase('ui')">
+        <img src="website ui (2).jpeg" alt="Website UI design project">
+        <div class="work-info"><h3>Website UI</h3></div>
+      </div>
+
+      <div class="work-card magnetic" data-type="social" role="button" tabindex="0" onclick="openCase('social')">
+        <img src="social media design.jpeg" alt="Social media design project">
+        <div class="work-info"><h3>Social Media</h3></div>
+      </div>
+
+    </div>
+
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
