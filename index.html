@@ -2,211 +2,324 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Zed | Graphic Designer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Zed — graphic designer specializing in brand identity, UI/UX, and social media design.">
-  <meta property="og:title" content="Zed | Graphic Designer">
-  <meta property="og:description" content="Zed — graphic designer specializing in brand identity, UI/UX, and social media design.">
+  <title>Zed — Graphic Designer</title>
+  <meta name="description" content="Zed is a graphic designer crafting brand identities, interfaces and campaign visuals that people remember.">
+  <meta property="og:title" content="Zed — Graphic Designer">
+  <meta property="og:description" content="Brand identity, UI/UX and social design studio by Zed.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Zed | Graphic Designer">
-  <meta name="twitter:description" content="Zed — graphic designer specializing in brand identity, UI/UX, and social media design.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23080808'/%3E%3Ctext x='32' y='44' font-family='Arial' font-size='40' font-weight='700' fill='%2315ff00' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2316130f'/%3E%3Ctext x='32' y='45' font-family='Georgia' font-size='38' font-weight='600' font-style='italic' fill='%23f4f1ea' text-anchor='middle'%3Ezed%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400;1,9..144,500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="home">
+<body class="page-home">
 
-<a href="#main-content" class="skip-link">Skip to main content</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="transition" aria-hidden="true"></div>
 
-<!-- PAGE TRANSITION -->
-<div class="transition"></div>
-<!-- FLOATING BACKGROUND BOXES -->
-<div class="cube cube1">
-    <div class="face front"></div>
-    <div class="face back"></div>
-    <div class="face right"></div>
-    <div class="face left"></div>
-    <div class="face top"></div>
-    <div class="face bottom"></div>
-  </div>
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Zed — home">
+        <span>zed</span><i>.</i>
+      </a>
 
-  <div class="cube cube2">
-    <div class="face front"></div>
-    <div class="face back"></div>
-    <div class="face right"></div>
-    <div class="face left"></div>
-    <div class="face top"></div>
-    <div class="face bottom"></div>
-  </div>
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-</div>
-<header>
-  <h2>zed<span>.</span></h2>
+      <div class="header-cta">
+        <a class="link-arrow" href="#contact">Let’s talk <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
 
-  <div class="menu-toggle" role="button" aria-label="Toggle menu" tabindex="0" onclick="toggleMenu()">☰</div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-  <nav id="nav" aria-label="Main navigation">
-    <a href="#home">Home</a>
-    <a href="work.html">Work</a>
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <main id="main">
 
-<main id="main-content">
+    <section class="hero" id="top">
+      <div class="container">
+        <p class="hero-eyebrow reveal">Graphic Designer<span>/</span>Portfolio <span>/</span>© 2026</p>
 
-<!-- HERO -->
-<section class="hero" id="home">
-  <h1 class="reveal"><span>I'M ZED</span><br>A GRAPHIC DESIGNER</h1>
-  <p class="reveal">I build brands, create sinages and visual identities that stand out.</p>
+        <h1 class="hero-title">
+          <span class="line reveal">Design that</span>
+          <span class="line reveal"><i>makes brands</i></span>
+          <span class="line reveal">impossible to ignore.</span>
+        </h1>
 
-  <div class="hero-buttons">
+        <div class="hero-bottom">
+          <p class="hero-intro reveal">
+            I’m Zed — a graphic designer turning ideas into
+            identities, interfaces and campaigns with sharp intent
+            and quiet confidence.
+          </p>
 
-    <button class="blob-btn magnetic" onclick="goWork()">
-      See My Work
+          <div class="hero-actions reveal">
+            <a class="btn btn-light" href="#work">Selected work <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          </div>
+        </div>
 
-      <span class="blob-btn__inner">
-        <span class="blob-btn__blobs">
-          <span class="blob-btn__blob"></span>
-          <span class="blob-btn__blob"></span>
-          <span class="blob-btn__blob"></span>
-          <span class="blob-btn__blob"></span>
-        </span>
-      </span>
-    </button>
+        <ul class="hero-meta reveal" aria-label="Availability">
+          <li><span class="dot"></span> Available for new projects</li>
+          <li>Brand identity</li>
+          <li>UI / UX</li>
+          <li>Social &amp; campaigns</li>
+        </ul>
+      </div>
 
-    <!-- REQUIRED SVG FOR BLOB EFFECT -->
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none;">
-      <defs>
-        <filter id="goo">
-          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
-          <feColorMatrix in="blur" mode="matrix"
-            values="1 0 0 0 0
-                    0 1 0 0 0
-                    0 0 1 0 0
-                    0 0 0 21 -7" result="goo">
-          </feColorMatrix>
-          <feBlend in2="goo" in="SourceGraphic"></feBlend>
-        </filter>
-      </defs>
-    </svg>
+      <div class="hero-ghost" aria-hidden="true">ZED®</div>
+      <a class="scroll-cue" href="#work" aria-label="Scroll to selected work">
+        <span></span>
+      </a>
+    </section>
 
-  </div>
-</section>
-
-<!-- PORTFOLIO -->
-<section class="section" id="portfolio">
-  <h2>My Work</h2>
-
-  <div class="portfolio">
-
-    <div class="card magnetic" role="button" aria-label="View the Brand Identity project" tabindex="0" onclick="goWork()">
-      <img src="brand identity (2).jpeg" alt="Brand identity project by Zed">
-      <h3>Brand Identity</h3>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Logo Design</span><span>Brand Identity</span><span>UI / UX</span><span>Social Media</span><span>Marketing</span><span>Print</span><span>Engraving</span><span>Signage</span><span>Logo Design</span><span>Brand Identity</span><span>UI / UX</span><span>Social Media</span><span>Marketing</span><span>Print</span><span>Engraving</span><span>Signage</span>
+      </div>
     </div>
 
-    <div class="card magnetic" role="button" aria-label="View the Website UI project" tabindex="0" onclick="goWork()">
-      <img src="website ui (2).jpeg" alt="Website UI design project by Zed">
-      <h3>Website UI</h3>
+    <section class="section work-section" id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="kicker">01 — Selected Work</p>
+            <h2>A few things I’ve <i>made.</i></h2>
+          </div>
+          <a class="link-arrow link-arrow--big" href="work.html">View all projects <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+
+        <div class="work-grid">
+          <article class="reveal">
+            <a class="work-tile" href="work.html">
+              <figure class="work-figure">
+                <img src="brand identity (2).jpeg" alt="Brand identity system designed by Zed" loading="lazy">
+                <span class="work-hover" aria-hidden="true">View case <i class="fa-solid fa-arrow-up-right"></i></span>
+              </figure>
+              <div class="work-meta">
+                <span class="work-index">01</span>
+                <h3>Brand Identity</h3>
+                <span class="work-tag">Identity / Logo</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="reveal" style="--delay:.1s">
+            <a class="work-tile" href="work.html">
+              <figure class="work-figure">
+                <img src="website ui (2).jpeg" alt="Website interface design by Zed" loading="lazy">
+                <span class="work-hover" aria-hidden="true">View case <i class="fa-solid fa-arrow-up-right"></i></span>
+              </figure>
+              <div class="work-meta">
+                <span class="work-index">02</span>
+                <h3>Website UI</h3>
+                <span class="work-tag">Interface / Web</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="reveal" style="--delay:.2s">
+            <a class="work-tile" href="work.html">
+              <figure class="work-figure">
+                <img src="social media design.jpeg" alt="Social media campaign design by Zed" loading="lazy">
+                <span class="work-hover" aria-hidden="true">View case <i class="fa-solid fa-arrow-up-right"></i></span>
+              </figure>
+              <div class="work-meta">
+                <span class="work-index">03</span>
+                <h3>Social Media</h3>
+                <span class="work-tag">Campaign / Content</span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services-section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="kicker">02 — Services</p>
+            <h2>What I can do <i>for you.</i></h2>
+          </div>
+        </div>
+
+        <ol class="services-list">
+          <li class="reveal">
+            <a href="#contact">
+              <span class="svc-num">01</span>
+              <div class="svc-main">
+                <h3>Logo &amp; Identity</h3>
+                <p>Wordmarks, logotypes and full identity systems built to be owned, not rented.</p>
+              </div>
+              <span class="svc-arrow"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+            </a>
+          </li>
+          <li class="reveal" style="--delay:.05s">
+            <a href="#contact">
+              <span class="svc-num">02</span>
+              <div class="svc-main">
+                <h3>UI / UX Design</h3>
+                <p>Websites, dashboards and mobile interfaces that feel as good as they look.</p>
+              </div>
+              <span class="svc-arrow"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+            </a>
+          </li>
+          <li class="reveal" style="--delay:.1s">
+            <a href="#contact">
+              <span class="svc-num">03</span>
+              <div class="svc-main">
+                <h3>Social &amp; Campaigns</h3>
+                <p>Feed systems, ad creatives and campaign posters engineered to stop the scroll.</p>
+              </div>
+              <span class="svc-arrow"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+            </a>
+          </li>
+          <li class="reveal" style="--delay:.15s">
+            <a href="#contact">
+              <span class="svc-num">04</span>
+              <div class="svc-main">
+                <h3>Branding &amp; Marketing</h3>
+                <p>Presentations, signage, engraving and print collateral with one consistent voice.</p>
+              </div>
+              <span class="svc-arrow"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+            </a>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker">03 — About</p>
+        </div>
+
+        <div class="about-grid">
+          <p class="about-quote reveal">
+            Design didn’t choose me first — <i>I couldn’t stop drawing it</i> until it became the only thing that made sense.
+          </p>
+
+          <div class="about-copy">
+            <p class="reveal">
+              I discovered my passion for design early, sketching people and things around me before
+              I understood why. That instinct never left. After high school I stopped treating design
+              as a hobby and started treating it as a skill — refining my eye, my process and my
+              taste until making felt as natural as thinking.
+            </p>
+            <p class="reveal">
+              Today I work across identity, interface and campaign design — multidisciplinary by nature,
+              obsessive about the details that make work feel <em>finished</em>, not just done.
+            </p>
+
+            <ul class="about-facts">
+              <li class="reveal"><span>Multidisciplinary</span><strong>Identity · UI · Campaign</strong></li>
+              <li class="reveal"><span>Approach</span><strong>Research-led, human-first</strong></li>
+              <li class="reveal"><span>Based</span><strong>Working worldwide</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="stats reveal">
+          <div class="stat"><strong>4+</strong><span>Years of craft</span></div>
+          <div class="stat"><strong>50+</strong><span>Projects delivered</span></div>
+          <div class="stat"><strong>6</strong><span>Design disciplines</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" id="cta">
+      <div class="container">
+        <p class="kicker reveal" style="color:var(--accent)">04 — Next</p>
+        <h2 class="reveal">Have a project? <i>Let’s make</i> something people remember.</h2>
+        <a class="btn btn-accent reveal" href="#contact">Start a project <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="kicker">05 — Contact</p>
+            <h2>Tell me <i>everything.</i></h2>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <p class="reveal">
+              Ready when you are. Send the brief, the half-formed idea, or a
+              voice note — I’ll get back to you quickly.
+            </p>
+
+            <div class="contact-channels reveal">
+              <a href="https://wa.me/qr/5HLQVSSQND4LG1" target="_blank" rel="noopener noreferrer">WhatsApp <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i></a>
+              <a href="https://www.instagram.com/felix.simon.zed?igsh=ODFnOGdocjBvazc=" target="_blank" rel="noopener noreferrer">Instagram <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+
+          <form class="contact-form reveal" novalidate>
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button class="btn btn-dark" type="button" onclick="sendMessage()">Send message <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+            <p class="form-status" id="response" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <a class="footer-brand" href="#top"><span>zed</span><i>.</i></a>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <ul class="footer-socials">
+        <li><a href="https://www.instagram.com/felix.simon.zed?igsh=ODFnOGdocjBvazc=" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+        <li><a href="https://x.com/Socialprince7?t=-RM1I7BO3xX-REW-ccS9wA&s=09" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a></li>
+        <li><a href="https://wa.me/qr/5HLQVSSQND4LG1" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></li>
+        <li><a href="https://www.tiktok.com/@4zed2zed?_t=8rCYGFppRbT&_r=1" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/felix-simon-9a4461257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+        <li><a href="https://github.com/ZEDFELIX" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></li>
+      </ul>
+
+      <div class="footer-bottom">
+        <p>© <span id="year">2026</span> Zed Designer. All rights reserved.</p>
+        <a class="to-top" href="#top">Back to top <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+      </div>
     </div>
+  </footer>
 
-    <div class="card magnetic" role="button" aria-label="View the Social Media project" tabindex="0" onclick="goWork()">
-      <img src="social media design.jpeg" alt="Social media design project by Zed">
-      <h3>Social Media</h3>
-    </div>
-
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section class="section" id="services">
-  <h2>Services</h2>
-
-  <div class="portfolio">
-    <div class="card"><h3>Logo Design</h3></div>
-     <div class="card"><h3>Billboad design</h3></div>
-      <div class="card"><h3>banner design</h3></div>
-    <div class="card"><h3>UI/UX Design</h3></div>
-     <div class="card"><h3>engraving</h3></div>
-      <div class="card"><h3>branding</h3></div>
-    <div class="card"><h3>Marketing Design</h3></div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="section" id="about">
-  <h2>About Me</h2>
-  <p>I discovered my passion for design at a young age. As I began exploring drawing and creating visuals for people and objects around me, my interest naturally grew deeper.
-
-Over time, that early curiosity stayed with me and continued to shape who I am. After completing high school, I came to understand that design was more than just a passion—it was something I was naturally inclined toward.
-
-Learning and improving didn’t feel difficult, because I already had a strong foundation and intuition for it. From there, I focused on refining my skills, and through consistent effort and growth, I developed into a professional graphic designer. </p>
-</section>
-
-<!-- CTA -->
-<section class="cta">
-  <h2>Let’s Work Together</h2>
-
-  <button class="blob-btn magnetic" onclick="scrollToSection('contact')">
-    Start Project
-
-    <span class="blob-btn__inner">
-      <span class="blob-btn__blobs">
-        <span class="blob-btn__blob"></span>
-        <span class="blob-btn__blob"></span>
-        <span class="blob-btn__blob"></span>
-        <span class="blob-btn__blob"></span>
-      </span>
-    </span>
-  </button>
-</section>
-
-<!-- CONTACT -->
-<section class="section contact" id="contact">
-  <h2>Contact</h2>
-
-  <input type="text" id="name" placeholder="Name">
-  <input type="email" id="email" placeholder="Email">
-  <textarea id="message" placeholder="Message"></textarea>
-
-  <button class="blob-btn magnetic" onclick="sendMessage()">
-    Send Message
-
-    <span class="blob-btn__inner">
-      <span class="blob-btn__blobs">
-        <span class="blob-btn__blob"></span>
-        <span class="blob-btn__blob"></span>
-        <span class="blob-btn__blob"></span>
-        <span class="blob-btn__blob"></span>
-      </span>
-    </span>
-  </button>
-
-  <p id="response"></p>
-</section>
-
-</main>
-
-<!-- FOOTER -->
-<footer>
-  <p>© 2026 Zed Designer</p>
-
-  <div class="socials">
-    <a href="https://www.instagram.com/felix.simon.zed?igsh=ODFnOGdocjBvazc=" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-    <a href="https://x.com/Socialprince7?t=-RM1I7BO3xX-REW-ccS9wA&s=09" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fa-brands fa-x"></i></a>
-    <a href="https://wa.me/qr/5HLQVSSQND4LG1" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-    <a href="https://www.tiktok.com/@4zed2zed?_t=8rCYGFppRbT&_r=1" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-    <a href="https://www.linkedin.com/in/felix-simon-9a4461257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-    <a href="https://github.com/ZEDFELIX" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-  </div>
-</footer>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
