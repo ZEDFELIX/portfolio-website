@@ -1,19 +1,18 @@
-# Zed — Design Portfolio
+# Legacy Portfolio Duplicate
 
-Static portfolio site for Zed, a graphic designer. One-page home with hero, work preview, services, about, and contact sections, plus a `work.html` gallery and `case.html` case-study page.
+This repository is retained as a legacy copy of the Felix/graphic-design portfolio work.
 
-## Pages
+**Canonical portfolio repository:** [ZEDFELIX/zed-graphic-design-portfolio-2](https://github.com/ZEDFELIX/zed-graphic-design-portfolio-2)
 
-- `index.html` — homepage
-- `work.html` — project gallery with category filter
-- `case.html` — case-study view (reads a `?type=` query param)
-- `index.php` — small success/error fragment for a PHP contact form (not used by the static pages)
+Do not add new portfolio features here. New portfolio updates should go to the canonical repository so the work does not split across multiple copies.
 
-## Deploy
+## Legacy contents
 
-Push the folder and enable GitHub Pages. No build step needed (HTML, CSS, JS, and images are all local). `index.php` is ignored by Pages.
+This repo contains the older static portfolio structure:
+- index.html
+- work.html
+- case.html
+- style.css
+- script.js
 
-## Assets
-
-- Images referenced relatively from the repo root (`brand identity (2).jpeg`, `website ui (2).jpeg`, `social media design.jpeg`, plus `F1.jpg`, `20241107_190929.jpg`).
-- `style.css` and `script.js` loaded from the repo root.
+The repository is intentionally kept for history/reference while the canonical portfolio is consolidated elsewhere.
